@@ -1,0 +1,21 @@
+
+.header_div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.title_and_icon{
+  display: flex;
+  flex-direction: row;
+  
+  
+}
+.title_and_icon p{
+  margin: 0 20px;
+  border-left: 2px solid black;
+  font-family: Lobster;
+  font-size: 30pt;
+}
+.input{
+  margin: 20px;
+}
