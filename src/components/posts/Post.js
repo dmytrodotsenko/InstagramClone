@@ -14,7 +14,7 @@ class Post extends React.Component {
 
     return (
       <div className="post">
-        <div className="post_topblock">
+        <div className="post_title">
           <div className="group_title">
             <img src={avatar}></img>
             <p>{userName} </p>
