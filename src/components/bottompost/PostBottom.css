@@ -2,7 +2,7 @@
 .heart {
   background-image: url("../icons/all.png");
   background-repeat: no-repeat;
-  background-position:  -53px -260px;
+  background-position:  -49px -260px;
   width: 29px;
   height: 27px;
   cursor: pointer;
@@ -12,8 +12,9 @@
   background-repeat: no-repeat;
   width: 29px;
   height: 27px;
-  background-position: -27px -260px;
+  background-position: -23px -260px;
   cursor: pointer;
+  
 }
 
 .save{
@@ -21,7 +22,7 @@
   background-repeat: no-repeat;
   width: 29px;
   height: 27px;
-  background-position: -234px -286px;
+  background-position: -230px -286px;
   cursor: pointer;
 }
 .saved_post{
@@ -29,6 +30,17 @@
   background-repeat: no-repeat;
   width: 29px;
   height: 27px;
-  background-position: -156px -286px;
+  background-position: -154px -286px;
   cursor: pointer;
+}
+.bottom_panel{
+  display: flex;
+  justify-content: space-between;
+}
+.bottom_panel button{
+  border: 0;
+  background-color: transparent;
+}
+.bottom_panel button:focus{
+ outline: none;
 }

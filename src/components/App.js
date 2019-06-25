@@ -14,7 +14,7 @@ class App extends React.Component {
   componentDidMount = async () => {
     try {
       const data = await DataLoad();
-
+      console.log(data);
       this.setState({ items: data });
       if (this.state.items.length != 0) {
         this.setState({ isLoaded: true });

@@ -1,5 +1,6 @@
 import React from 'react';
 import Post from './posts/Post';
+import './main_content.css'
 
 class MainContent extends React.Component {
   state = {
@@ -23,7 +24,7 @@ class MainContent extends React.Component {
             <Post
               key={element.id}
               element={element}
-              
+             
             />
           ))}
         </div>

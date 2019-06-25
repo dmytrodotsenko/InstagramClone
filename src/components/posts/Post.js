@@ -3,16 +3,27 @@ import './Post.css'
 import PostBottom from '../bottompost/PostBottom';
 
 class Post extends React.Component {
+
+
   state = {
+
+    comments: this.props.comments,
+    comment: ''
   }
+
+  
+
   render() {
     const {
       imageUrl,
       avatar,
       userName,
       likes,
+      description,
+      
       
     } = this.props.element;
+    
 
     return (
       <div className="post">
@@ -27,7 +38,12 @@ class Post extends React.Component {
           <img src={imageUrl}></img>
         </div>
         <PostBottom 
-        likes = {likes}>
+        
+        likes = {likes}
+        userName = {userName}
+        description = {description}
+        
+        >
 
         </PostBottom>
       </div>

@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import './PostBottom.css'
 
+
  class PostBottom extends Component {
    state = {
      likes: 0,
      newLike: false,
-     savePost: false
+     savePost: false,
+     
    };
+
    componentDidMount = () =>{
      this.setState({
-       likes: this.props.likes
+       likes: this.props.likes,
+       
+
      })
    };
-
-
+   
    addNewLike = () =>{
      const {newLike} = this.state;
      this.setState({
@@ -21,21 +25,25 @@ import './PostBottom.css'
        newLike: !this.state.newLike,
      });
    };
+
+   heartClick = () =>{
+    return this.state.newLike ? '  red_heart' : 'heart';
+  };
+  
    savePosts = () =>{
     this.setState({
       savePost: !this.state.savePost,
     });
   };
    
-   heartClick = () =>{
-     return this.state.newLike ? '  red_heart' : 'heart';
-   };
+
    saveClick = () =>{
      return this.state.savePost ? 'saved_post' : 'save';
    }
    
 
   render() {
+    const {description, userName} = this.props;
     const {likes} = this.state;
     return (
       <div >
@@ -50,6 +58,18 @@ import './PostBottom.css'
 
         <div className = "likes">
         <p>{likes} Likes</p>
+        </div>
+        {description != '' && (
+          <div>
+            <h3>{userName}</h3>
+            <p>{description}</p>
+            
+            
+          </div>
+        )}
+        
+        <div>
+         
         </div>
       </div>
     )
