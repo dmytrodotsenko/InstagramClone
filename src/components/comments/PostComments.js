@@ -1,12 +1,13 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import './comments.css'
- class PostComments extends Component {
-  state = {
-    comments: this.props.comments,
-  }
+ class PostComments extends React.Component {
+   constructor(){
+     super()
+     this.state = {
+       comments: this.props.comments,
+     }
+   }
 
-  
- 
   render() {   
    
     

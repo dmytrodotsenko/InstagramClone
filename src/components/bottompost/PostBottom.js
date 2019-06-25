@@ -13,16 +13,14 @@ import './PostBottom.css'
    componentDidMount = () =>{
      this.setState({
        likes: this.props.likes,
-       
-
      })
    };
    
    addNewLike = () =>{
-     const {newLike} = this.state;
+     const {newLike, likes} = this.state;
      this.setState({
-       likes: newLike ? this.state.likes -1 : this.state.likes +1,
-       newLike: !this.state.newLike,
+       likes: newLike ? likes -1 : likes +1,
+       newLike: !newLike,
      });
    };
 
@@ -36,17 +34,15 @@ import './PostBottom.css'
     });
   };
    
-
-   saveClick = () =>{
+   saveClick = () => {
      return this.state.savePost ? 'saved_post' : 'save';
    }
    
-
   render() {
     const {description, userName} = this.props;
     const {likes} = this.state;
     return (
-      <div >
+      <div className='post-bottom' >
         <div className = "bottom_panel">
           <span className = "buttons_like">
             <button onClick = {this.addNewLike} className = {this.heartClick()}></button>
@@ -59,18 +55,12 @@ import './PostBottom.css'
         <div className = "likes">
         <p>{likes} Likes</p>
         </div>
-        {description != '' && (
+        {description !== '' && (
           <div>
             <h3>{userName}</h3>
             <p>{description}</p>
-            
-            
           </div>
         )}
-        
-        <div>
-         
-        </div>
       </div>
     )
   }

@@ -4,7 +4,7 @@ import PostBottom from '../bottompost/PostBottom';
 
 class Post extends React.Component {
 
-
+ // rewrite ro constructor
   state = {
 
     comments: this.props.comments,
@@ -29,23 +29,19 @@ class Post extends React.Component {
       <div className="post">
         <div className="post_title">
           <div className="group_title">
-            <img src={avatar}></img>
+            <img src={avatar} alt='' ></img>
             <p>{userName} </p>
           </div>
           
         </div>
         <div className="content">
-          <img src={imageUrl}></img>
+          <img src={imageUrl} alt=''></img>
         </div>
         <PostBottom 
-        
-        likes = {likes}
-        userName = {userName}
-        description = {description}
-        
-        >
-
-        </PostBottom>
+          likes = {likes}
+          userName = {userName}
+          description = {description}
+        />
       </div>
     );
   }

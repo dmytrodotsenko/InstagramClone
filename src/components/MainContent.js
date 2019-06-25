@@ -20,7 +20,7 @@ class MainContent extends React.Component {
       <div className="main">
         
         <div className="posts_holder">
-          {items.map(element => (
+          {items && items.map(element => (
             <Post
               key={element.id}
               element={element}
