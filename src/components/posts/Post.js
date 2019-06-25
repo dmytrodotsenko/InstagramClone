@@ -1,5 +1,6 @@
 import React from 'react';
 import './Post.css'
+import PostBottom from '../bottompost/PostBottom';
 
 class Post extends React.Component {
   state = {
@@ -9,6 +10,7 @@ class Post extends React.Component {
       imageUrl,
       avatar,
       userName,
+      likes,
       
     } = this.props.element;
 
@@ -24,6 +26,10 @@ class Post extends React.Component {
         <div className="content">
           <img src={imageUrl}></img>
         </div>
+        <PostBottom 
+        likes = {likes}>
+
+        </PostBottom>
       </div>
     );
   }

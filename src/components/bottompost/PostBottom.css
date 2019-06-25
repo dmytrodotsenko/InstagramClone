@@ -1,0 +1,34 @@
+
+.heart {
+  background-image: url("../icons/all.png");
+  background-repeat: no-repeat;
+  background-position:  -53px -260px;
+  width: 29px;
+  height: 27px;
+  cursor: pointer;
+}
+.red_heart{
+  background-image: url("../icons/all.png");
+  background-repeat: no-repeat;
+  width: 29px;
+  height: 27px;
+  background-position: -27px -260px;
+  cursor: pointer;
+}
+
+.save{
+  background-image: url("../icons/all.png");
+  background-repeat: no-repeat;
+  width: 29px;
+  height: 27px;
+  background-position: -234px -286px;
+  cursor: pointer;
+}
+.saved_post{
+  background-image: url("../icons/all.png");
+  background-repeat: no-repeat;
+  width: 29px;
+  height: 27px;
+  background-position: -156px -286px;
+  cursor: pointer;
+}
