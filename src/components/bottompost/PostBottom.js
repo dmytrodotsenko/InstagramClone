@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './PostBottom.css'
+import PostComments from '../comments/PostComments';
 
 
  class PostBottom extends Component {
@@ -7,13 +8,15 @@ import './PostBottom.css'
      likes: 0,
      newLike: false,
      savePost: false,
+     comments: [],
      
    };
 
    componentDidMount = () =>{
      this.setState({
        likes: this.props.likes,
-     })
+       comments: this.props.comments,
+     });
    };
    
    addNewLike = () =>{
@@ -39,7 +42,7 @@ import './PostBottom.css'
    }
    
   render() {
-    const {description, userName} = this.props;
+    const {description, userName, comments} = this.props;
     const {likes} = this.state;
     return (
       <div className='post-bottom' >
@@ -61,6 +64,10 @@ import './PostBottom.css'
             <p>{description}</p>
           </div>
         )}
+        <div className = "comments">
+          <PostComments
+          comments = {comments}></PostComments>
+        </div>
       </div>
     )
   }

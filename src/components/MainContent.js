@@ -12,6 +12,11 @@ class MainContent extends React.Component {
       return new Date(b.createdAt) - new Date(a.createdAt);
     });
   };
+  componentDidUpdate(prevProps) {
+    if (this.props.items.length !== prevProps.items.length) {
+      this.setState({ items: this.props.items });
+    }
+  }
 
   render() {
     const { items } = this.state;
@@ -24,6 +29,8 @@ class MainContent extends React.Component {
             <Post
               key={element.id}
               element={element}
+              delPost = {this.props.delPost}
+              comments = {element.comments}
              
             />
           ))}

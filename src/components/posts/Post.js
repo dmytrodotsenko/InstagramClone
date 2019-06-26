@@ -2,6 +2,7 @@ import React from 'react';
 import './Post.css'
 import PostBottom from '../bottompost/PostBottom';
 
+
 class Post extends React.Component {
 
  // rewrite ro constructor
@@ -12,7 +13,6 @@ class Post extends React.Component {
   }
 
   
-
   render() {
     const {
       imageUrl,
@@ -20,9 +20,12 @@ class Post extends React.Component {
       userName,
       likes,
       description,
-      
-      
+      id,
+
     } = this.props.element;
+    const {
+      comments
+    } = this.state;
     
 
     return (
@@ -31,6 +34,7 @@ class Post extends React.Component {
           <div className="group_title">
             <img src={avatar} alt='' ></img>
             <p>{userName} </p>
+            <button onClick = {this.props.delPost.bind(this, id)}  >delete</button>
           </div>
           
         </div>
@@ -41,6 +45,7 @@ class Post extends React.Component {
           likes = {likes}
           userName = {userName}
           description = {description}
+          comments = {comments}
         />
       </div>
     );

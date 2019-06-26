@@ -1,7 +1,7 @@
 import React from 'react';
 import {Header} from './header/headerComponent';
 import MainContent from './MainContent';
-import {DataLoad} from '../services/DataLoad';
+import {DataLoad, dataDelete} from '../services/DataLoad';
 
 
 
@@ -21,7 +21,12 @@ class App extends React.Component {
       }
     }
   };
-
+    deletePost =  id => {
+      const item = dataDelete(id);
+      this.setState({
+        items: [...this.state.items.filter(element => element.id !== item.id)],
+      });
+    }
  
 
   render() {
@@ -36,6 +41,7 @@ class App extends React.Component {
             <MainContent
               class="main"
               items={items}
+              delPost = {this.deletePost}
             />
           </div>) 
         : <p>Loading...</p>
