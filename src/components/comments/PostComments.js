@@ -20,24 +20,50 @@ import './comments.css'
         <ul></ul>
       )
       }
-      else {
+      else if (comments.length <= 3) {
         return(
       <div >
       {[...comments].map((element) => (
         <div  key={`${element}_${Math.random()}`}>
           <div className="comment_container">
               <div className="comment_text">
-                <h3>Comment</h3>
+                <h5>Comment</h5>
                 <div >{element}</div>
               </div>
-      
-              
             </div>
           </div>
         ))}
     </div>
       )
   
+  }
+  else {
+    
+    return (
+      <div >
+        <div>
+         Show all comments ({comments.length})
+        </div>
+        {[...comments].map((element, index) => (
+          index < 3 ? (
+            <div
+              key={`${element}_${Math.random()}`}
+            >
+              <div className="comment_container">
+                <div>
+                  <div className="comment_text">
+                    <h5>Comment </h5>
+                    <div >{element}</div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            )
+            :
+            null))
+        }
+      </div>
+    );
   }
 }
  }
