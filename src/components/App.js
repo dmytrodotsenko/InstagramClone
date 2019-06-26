@@ -26,7 +26,7 @@ class App extends React.Component {
       this.setState({
         items: [...this.state.items.filter(element => element.id !== item.id)],
       });
-    }
+    } // Видаляє, але не динамічно, потрібно перезагружати сторінку після натиску на Видалення посту.
  
 
   render() {
